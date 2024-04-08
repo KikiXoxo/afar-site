@@ -1,0 +1,122 @@
+// VARIABLES
+$darkRed: rgb(163, 36, 36);
+$darkBlue: rgb(17, 47, 54);
+$dark: rgb(14, 13, 13);
+$bgLight: rgb(231, 231, 231);
+
+$font-sm: 0.875rem;
+$font-med: 1.125rem;
+$font-lg: 1.25rem;
+$font-xlg: 2.5rem;
+
+// MIXINS
+
+//GENERALS RESETS
+html {
+  font-size: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: $font-med;
+  color: $dark;
+  line-height: 1.3;
+  margin: 0;
+  // overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 500;
+  line-height: 1.15;
+  // margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: $font-xlg;
+}
+
+h2 {
+  font-size: $font-lg;
+  font-family: 'Teko', sans-serif;
+}
+
+h4 {
+  font-size: $font-sm;
+  color: $darkRed;
+  text-transform: uppercase;
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 2.25rem;
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: contain;
+}
+
+li {
+  list-style: none;
+}
+
+// UTILITIES
+.container {
+  max-width: 72rem;
+  margin: 0 auto;
+
+  &--pall {
+    padding: 6rem 1.5rem;
+  }
+
+  &--py {
+    padding: 6rem 0;
+  }
+
+  &--px {
+    padding: 0 1.5rem;
+  }
+}
+
+.flex {
+  display: flex;
+
+  &--jc--ai {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--column {
+    flex-direction: column;
+  }
+}
+
+.subtext {
+  font-style: italic;
+  color: $darkBlue;
+  font-size: 0.65rem;
+}
+
+.bg-light {
+  background: $bgLight;
+}
+
+// VISIBILITY
