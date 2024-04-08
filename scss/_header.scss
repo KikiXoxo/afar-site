@@ -23,7 +23,8 @@
       }
       li a {
         color: $darkBlue;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0;
+        margin: 0 1rem;
         transition: all 150ms ease-in-out;
 
         &:hover {
@@ -40,7 +41,6 @@
   &__img {
     width: 90%;
     max-height: 390px;
-    overflow: hidden;
 
     img {
       width: 100%;

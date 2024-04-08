@@ -5,9 +5,9 @@ $dark: rgb(14, 13, 13);
 $bgLight: rgb(231, 231, 231);
 
 $font-sm: 0.875rem;
-$font-med: 1.125rem;
-$font-lg: 1.25rem;
-$font-xlg: 2.5rem;
+$font-med: 1rem;
+$font-lg: 1.8rem;
+$font-xlg: 2.4rem;
 
 // MIXINS
 
@@ -39,39 +39,49 @@ h4 {
   font-weight: 500;
   line-height: 1.15;
   // margin-top: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.1rem;
 }
 
 h1 {
+  font-weight: 400;
   font-size: $font-xlg;
 }
 
 h2 {
   font-size: $font-lg;
   font-family: 'Teko', sans-serif;
+  text-transform: uppercase;
 }
 
 h4 {
   font-size: $font-sm;
   color: $darkRed;
   text-transform: uppercase;
+  margin-top: 1rem;
 }
 
 p {
   line-height: 1.5;
-  margin-bottom: 2.25rem;
+  margin-bottom: 0.5rem;
+  color: $dark;
 }
 
 a,
 a:visited,
 a:hover {
+  // color: $dark;
   text-decoration: none;
+  transition: opacity 150ms ease-in-out;
+}
+
+a:hover {
+  opacity: 0.8;
 }
 
 img {
   display: block;
   width: 100%;
-  object-fit: contain;
+  // object-fit: cover;
 }
 
 li {
@@ -84,11 +94,11 @@ li {
   margin: 0 auto;
 
   &--pall {
-    padding: 6rem 1.5rem;
+    padding: 4rem 1.5rem;
   }
 
   &--py {
-    padding: 6rem 0;
+    padding: 4rem 0 1.2rem;
   }
 
   &--px {
@@ -109,10 +119,75 @@ li {
   }
 }
 
-.subtext {
-  font-style: italic;
-  color: $darkBlue;
-  font-size: 0.65rem;
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  // grid-template-rows: 1fr 1fr;
+  gap: 1.5rem 1rem;
+
+  &__item:not(:last-child) {
+    border-bottom: 1px solid $darkBlue;
+  }
+
+  &__item:last-child {
+    margin-left: 1.4rem;
+
+    h4 {
+      margin: 0 0 0.5rem;
+    }
+    p {
+      border-bottom: 1px solid $darkBlue;
+      padding: 1rem 0;
+    }
+  }
+}
+
+.grid--1 {
+  .grid__item--3 {
+    grid-column: 1 / 2;
+  }
+
+  .grid__item--5 {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+  }
+}
+
+.text {
+  &--link {
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+  }
+
+  &--description {
+    color: $darkBlue;
+    font-size: $font-sm;
+  }
+
+  &--sub {
+    font-style: italic;
+    color: $darkBlue;
+    font-size: 0.65rem;
+  }
+
+  &--center {
+    text-align: center;
+  }
+}
+
+.img__container {
+  overflow: hidden;
+
+  &--1 {
+    overflow: hidden;
+    height: 240px;
+  }
+
+  &--2 {
+    overflow: hidden;
+    height: 180px;
+  }
 }
 
 .bg-light {
