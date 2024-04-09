@@ -120,28 +120,51 @@ li {
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.5rem 1rem;
 }
-.grid__item:not(:last-child) {
+
+.grid--1 {
+  gap: 1.5rem;
+}
+.grid--1 .grid__item--3 {
+  grid-column: 1/2;
+}
+.grid--1 .grid__item:not(:last-child) {
   border-bottom: 1px solid rgb(17, 47, 54);
 }
-.grid__item:last-child {
+.grid--1 .grid__item:last-child {
+  grid-column: 3/4;
+  grid-row: 1/4;
   margin-left: 1.4rem;
 }
-.grid__item:last-child h4 {
+.grid--1 .grid__item:last-child h4 {
   margin: 0 0 0.5rem;
 }
-.grid__item:last-child p {
+.grid--1 .grid__item:last-child p {
   border-bottom: 1px solid rgb(17, 47, 54);
   padding: 0.75rem 0;
 }
 
-.grid--1 .grid__item--3 {
-  grid-column: 1/2;
+.grid--2 {
+  gap: 4rem 1.5rem;
 }
-.grid--1 .grid__item--5 {
-  grid-column: 3/4;
-  grid-row: 1/4;
+.grid--2 .grid__item {
+  border-bottom: 1px solid rgb(17, 47, 54);
+}
+.grid--2 .grid__item:nth-child(7),
+.grid--2 .grid__item:nth-child(8),
+.grid--2 .grid__item:nth-child(9) {
+  border-bottom: none;
+}
+.grid--2 .grid__item:nth-child(7) h4,
+.grid--2 .grid__item:nth-child(8) h4,
+.grid--2 .grid__item:nth-child(9) h4 {
+  margin: 0 0 0.5rem;
+}
+.grid--2 .grid__item:nth-child(7) p,
+.grid--2 .grid__item:nth-child(8) p,
+.grid--2 .grid__item:nth-child(9) p {
+  border-bottom: 1px solid rgb(17, 47, 54);
+  padding: 0.75rem 0;
 }
 
 .text--link {

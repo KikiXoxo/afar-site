@@ -136,19 +136,29 @@ li {
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  // grid-template-rows: 1fr 1fr;
-  gap: 1.5rem 1rem;
+}
 
-  &__item:not(:last-child) {
+// FIXME - add new class for the grid items with images, and different class for grid items with only links and add border bottom styles there
+.grid--1 {
+  gap: 1.5rem;
+
+  .grid__item--3 {
+    grid-column: 1 / 2;
+  }
+
+  .grid__item:not(:last-child) {
     border-bottom: 1px solid $darkBlue;
   }
 
-  &__item:last-child {
+  .grid__item:last-child {
+    grid-column: 3 / 4;
+    grid-row: 1 / 4;
     margin-left: 1.4rem;
 
     h4 {
       margin: 0 0 0.5rem;
     }
+
     p {
       border-bottom: 1px solid $darkBlue;
       padding: 0.75rem 0;
@@ -156,14 +166,26 @@ li {
   }
 }
 
-.grid--1 {
-  .grid__item--3 {
-    grid-column: 1 / 2;
+.grid--2 {
+  gap: 4rem 1.5rem;
+
+  .grid__item {
+    border-bottom: 1px solid $darkBlue;
   }
 
-  .grid__item--5 {
-    grid-column: 3 / 4;
-    grid-row: 1 / 4;
+  .grid__item:nth-child(7),
+  .grid__item:nth-child(8),
+  .grid__item:nth-child(9) {
+    border-bottom: none;
+
+    h4 {
+      margin: 0 0 0.5rem;
+    }
+
+    p {
+      border-bottom: 1px solid $darkBlue;
+      padding: 0.75rem 0;
+    }
   }
 }
 
