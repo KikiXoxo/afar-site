@@ -10,6 +10,20 @@ $font-lg: 1.8rem;
 $font-xlg: 2.4rem;
 
 // MIXINS
+// 860px (Only Nav to change) , 770px (flex, grid--3, footer to change), 560px (all to change)
+
+//Sass Map
+$breakpoints-down: (
+  'mobile': '560px',
+  'tab': '770px',
+  'lg': '860px',
+);
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
 
 //GENERALS RESETS
 html {
@@ -29,7 +43,7 @@ body {
   color: $dark;
   line-height: 1.3;
   margin: 0;
-  // overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 h1,
@@ -129,6 +143,18 @@ li {
 .flex {
   display: flex;
 
+  &:not(.flex--column) {
+    @include breakpoint-down(tab) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @include breakpoint-down(mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
   &--jc--ai {
     justify-content: center;
     align-items: center;
@@ -137,14 +163,16 @@ li {
   &--column {
     flex-direction: column;
   }
-}
 
-.flex {
   &__item {
     flex-basis: 33%;
 
     &:not(:last-child) {
       margin-right: 1rem;
+
+      @include breakpoint-down(tab) {
+        margin-right: 0;
+      }
     }
 
     p {
@@ -175,6 +203,12 @@ li {
     grid-row: 1 / 4;
     margin-left: 1.4rem;
 
+    @include breakpoint-down(mobile) {
+      grid-column: 1 / 4;
+      // grid-row: auto;
+      margin-left: 0;
+    }
+
     h4 {
       margin: 0 0 0.5rem;
     }
@@ -184,6 +218,12 @@ li {
       width: 100%;
       border-bottom: 1px solid $darkBlue;
       padding: 0.8rem 0;
+    }
+  }
+
+  .grid__item {
+    @include breakpoint-down(mobile) {
+      grid-column: 1 / span 3;
     }
   }
 }
@@ -211,6 +251,10 @@ li {
       padding: 0.8rem 0;
     }
   }
+
+  @include breakpoint-down(mobile) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .grid--3 {
@@ -221,6 +265,27 @@ li {
   .grid__item--1 {
     grid-column: 1 / 3;
     grid-row: 1 / 3;
+
+    @include breakpoint-down(tab) {
+      grid-column: 1 / span 4;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .grid__item:not(:first-child) {
+    @include breakpoint-down(tab) {
+      grid-column: span 2;
+    }
+
+    @include breakpoint-down(mobile) {
+      grid-column: span 4;
+    }
+  }
+
+  .grid__item {
+    @include breakpoint-down(mobile) {
+      margin-bottom: 1rem;
+    }
   }
 }
 
@@ -229,6 +294,10 @@ li {
     font-weight: 500;
     font-size: 1.2rem;
     margin-top: 0.5rem;
+
+    @include breakpoint-down(tab) {
+      font-size: $font-med;
+    }
   }
 
   &--description {
@@ -263,11 +332,10 @@ li {
   &--3 {
     overflow: hidden;
     height: 350px;
-  }
 
-  &--4 {
-    overflow: hidden;
-    height: 140px;
+    @include breakpoint-down(mobile) {
+      height: 180px;
+    }
   }
 }
 
