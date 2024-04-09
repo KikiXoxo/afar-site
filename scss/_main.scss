@@ -10,7 +10,15 @@
 }
 
 .travel-tales {
+  padding-bottom: 8rem;
+
   h4 {
     margin-bottom: 0.5rem;
+  }
+
+  .grid__item:last-child {
+    grid-column: 1 / 5;
+    justify-self: center;
+    margin-top: 2rem;
   }
 }
