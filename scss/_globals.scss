@@ -69,9 +69,13 @@ p {
 a,
 a:visited,
 a:hover {
-  // color: $dark;
   text-decoration: none;
   transition: opacity 150ms ease-in-out;
+}
+
+a {
+  color: $dark;
+  font-size: $font-sm;
 }
 
 a:hover {
@@ -154,7 +158,7 @@ li {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-// FIXME - add new class for the grid items with images, and different class for grid items with only links and add border bottom styles there
+// REFACTOR - add new class for the grid items with images, and different class for grid items with only links and add border bottom styles to those classes instead
 .grid--1 {
   gap: 1.5rem;
 
@@ -175,9 +179,11 @@ li {
       margin: 0 0 0.5rem;
     }
 
-    p {
+    a {
+      display: inline-block;
+      width: 100%;
       border-bottom: 1px solid $darkBlue;
-      padding: 0.75rem 0;
+      padding: 0.8rem 0;
     }
   }
 }
@@ -198,9 +204,11 @@ li {
       margin: 0 0 0.5rem;
     }
 
-    p {
+    a {
+      display: inline-block;
+      width: 100%;
       border-bottom: 1px solid $darkBlue;
-      padding: 0.75rem 0;
+      padding: 0.8rem 0;
     }
   }
 }

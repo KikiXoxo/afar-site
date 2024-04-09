@@ -1,0 +1,39 @@
+.footer {
+  background: $darkBlue;
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+
+  img {
+    width: 50px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  a {
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 1.2rem 0;
+    width: 100%;
+  }
+}
+
+.socials {
+  display: flex;
+  justify-content: space-between;
+}
+
+.copyright {
+  grid-column: 1 / 4;
+  margin-top: 6rem;
+
+  &__text {
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 300;
+  }
+}

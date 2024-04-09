@@ -59,6 +59,11 @@ a:hover {
   transition: opacity 150ms ease-in-out;
 }
 
+a {
+  color: rgb(14, 13, 13);
+  font-size: 0.875rem;
+}
+
 a:hover {
   opacity: 0.8;
 }
@@ -156,9 +161,11 @@ li {
 .grid--1 .grid__item:last-child h4 {
   margin: 0 0 0.5rem;
 }
-.grid--1 .grid__item:last-child p {
+.grid--1 .grid__item:last-child a {
+  display: inline-block;
+  width: 100%;
   border-bottom: 1px solid rgb(17, 47, 54);
-  padding: 0.75rem 0;
+  padding: 0.8rem 0;
 }
 
 .grid--2 {
@@ -177,11 +184,13 @@ li {
 .grid--2 .grid__item:nth-child(9) h4 {
   margin: 0 0 0.5rem;
 }
-.grid--2 .grid__item:nth-child(7) p,
-.grid--2 .grid__item:nth-child(8) p,
-.grid--2 .grid__item:nth-child(9) p {
+.grid--2 .grid__item:nth-child(7) a,
+.grid--2 .grid__item:nth-child(8) a,
+.grid--2 .grid__item:nth-child(9) a {
+  display: inline-block;
+  width: 100%;
   border-bottom: 1px solid rgb(17, 47, 54);
-  padding: 0.75rem 0;
+  padding: 0.8rem 0;
 }
 
 .grid--3 {
@@ -304,4 +313,44 @@ li {
   grid-column: 1/5;
   justify-self: center;
   margin-top: 2rem;
+}
+
+.footer {
+  background: rgb(17, 47, 54);
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+}
+.footer img {
+  width: 50px;
+}
+.footer__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.footer a {
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 1.2rem 0;
+  width: 100%;
+}
+
+.socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.copyright {
+  grid-column: 1/4;
+  margin-top: 6rem;
+}
+.copyright__text {
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 300;
 }
